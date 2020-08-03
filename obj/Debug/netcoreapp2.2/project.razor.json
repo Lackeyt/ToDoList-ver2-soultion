@@ -3004,6 +3004,11 @@
       "FilePath": "/Users/iangregg/Desktop/ToDoList.Solution/ToDoList/Views/Categories/New.cshtml",
       "TargetPath": "Views\\Categories\\New.cshtml",
       "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/iangregg/Desktop/ToDoList.Solution/ToDoList/Views/Items/AddCategory.cshtml",
+      "TargetPath": "Views\\Items\\AddCategory.cshtml",
+      "FileKind": "mvc"
     }
   ],
   "SerializationFormat": "0.2"

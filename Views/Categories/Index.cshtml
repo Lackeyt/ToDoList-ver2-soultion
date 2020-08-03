@@ -1,16 +1,28 @@
-@* @using ToDoList.Models;
-
-<h1>Categories</h1>
-
-@if (@Model.Count == 0)
-{
-  <h3>No categories have been added yet!</h3>
-} 
-
-@foreach (Category category in Model)
-{
-  <h3><a href='/categories/@category.CategoryId'>@category.Name</a></h3>
+@{
+  Layout = "_Layout";
 }
 
-<p><a href='/'>Back home</a></p>
-<p>@Html.ActionLink("Home", "Index", "Home")</p> *@
+@model ToDoList.Models.Category;
+
+<h2>Category Details</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+
+@if(@Model.Items.Count == 0)
+{
+  <p>This category does not contain any items</p>
+}
+else
+{
+  <h4>Items the category contains:</h4>
+  <ul>
+  @foreach(var join in Model.Items)
+  {
+    <li>@join.Item.Description</li>
+  }
+  </ul>
+}
+
+<p>@Html.ActionLink("Back to categories", "Index")</p>
+<p>@Html.ActionLink("Edit Category", "Edit", new { id = Model.CategoryId })</p>
+<p>@Html.ActionLink("Delete Category", "Delete", new { id = Model.CategoryId })</p>
